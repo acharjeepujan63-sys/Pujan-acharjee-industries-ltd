@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Pujan Acharjee Industries Ltd — building reliable industrial solutions through quality, innovation, and service.">
+  <title>Pujan Acharjee Industries Ltd</title>
+  <style>
+    :root {
+      --navy: #10253f;
+      --blue: #1769aa;
+      --cyan: #21b6c7;
+      --ink: #172638;
+      --muted: #64748b;
+      --light: #f3f7fb;
+      --white: #fff;
+      --line: #dce5ee;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; font-family: Arial, Helvetica, sans-serif; color: var(--ink); line-height: 1.6; }
+    a { color: inherit; text-decoration: none; }
+    .topbar { background: #0a192b; color: #d9e7f5; font-size: .85rem; padding: 8px 5%; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+    header { position: sticky; top: 0; z-index: 10; background: rgba(255,255,255,.97); border-bottom: 1px solid var(--line); }
+    .nav { max-width: 1180px; margin: auto; padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 800; color: var(--navy); line-height: 1.15; }
+    .brand-mark { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 10px; background: linear-gradient(135deg,var(--blue),var(--cyan)); color: white; font-size: 1.05rem; letter-spacing: -1px; }
+    .brand small { display: block; color: var(--muted); font-weight: 600; font-size: .68rem; letter-spacing: 1.5px; margin-top: 4px; }
+    .links { display: flex; align-items: center; gap: 25px; font-size: .93rem; font-weight: 700; }
+    .links a:hover { color: var(--blue); }
+    .btn { display: inline-block; padding: 12px 19px; border-radius: 6px; font-weight: 700; border: 0; cursor: pointer; transition: transform .2s, background .2s; }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { background: var(--cyan); color: #062438; }
+    .btn-outline { border: 1px solid rgba(255,255,255,.55); color: white; }
+    .menu-btn { display: none; background: none; border: 0; font-size: 1.6rem; color: var(--navy); }
+    .hero { color: white; background: linear-gradient(110deg,rgba(8,27,48,.94),rgba(15,58,91,.76)), url('https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=2000&q=85') center/cover; min-height: 590px; display: flex; align-items: center; }
+    .hero-inner { max-width: 1180px; width: 100%; margin: auto; padding: 80px 24px; }
+    .eyebrow { text-transform: uppercase; color: var(--cyan); letter-spacing: 2.5px; font-size: .78rem; font-weight: 800; }
+    h1 { font-size: clamp(2.5rem, 5.4vw, 4.7rem); line-height: 1.08; max-width: 800px; margin: 18px 0; letter-spacing: -1.8px; }
+    .hero p { color: #dce9f5; max-width: 650px; font-size: 1.12rem; margin-bottom: 28px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .trust-strip { background: var(--navy); color: white; }
+    .trust-inner { max-width: 1180px; margin: auto; padding: 24px; display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+    .trust-item { display: flex; gap: 13px; align-items: center; }
+    .trust-icon { color: var(--cyan); font-size: 1.55rem; }
+    .trust-item strong { display: block; }
+    .trust-item span:last-child { color: #bfd0e0; font-size: .86rem; }
+    section { padding: 82px 24px; }
+    .container { max-width: 1180px; margin: auto; }
+    .section-head { max-width: 720px; margin-bottom: 38px; }
+    .section-head h2 { font-size: clamp(2rem, 3.5vw, 3rem); line-height: 1.15; margin: 10px 0 14px; color: var(--navy); letter-spacing: -.8px; }
+    .section-head p { color: var(--muted); margin: 0; }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 55px; }
+    .about-image { min-height: 380px; border-radius: 14px; background: url('https://images.unsplash.com/photo-1567789884554-0b844b597180?auto=format&fit=crop&w=1200&q=85') center/cover; box-shadow: 18px 18px 0 #e1f5f7; }
+    .about-copy h2 { font-size: clamp(2rem,3.4vw,2.8rem); line-height: 1.15; color: var(--navy); margin: 12px 0 18px; }
+    .about-copy p { color: var(--muted); }
+    .check-list { padding: 0; list-style: none; margin: 25px 0; }
+    .check-list li { margin: 12px 0; font-weight: 700; }
+    .check-list li::before { content: "✓"; color: var(--blue); font-weight: 900; margin-right: 10px; }
+    .services { background: var(--light); }
+    .service-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+    .service-card { background: white; padding: 28px; border: 1px solid var(--line); border-radius: 12px; transition: .2s; }
+    .service-card:hover { transform: translateY(-5px); box-shadow: 0 15px 35px #10253f12; border-color: #a6dce2; }
+    .service-icon { width: 52px; height: 52px; display: grid; place-items: center; border-radius: 10px; color: var(--blue); background: #e8f5fa; font-size: 1.5rem; }
+    .service-card h3 { color: var(--navy); margin: 18px 0 8px; }
+    .service-card p { color: var(--muted); margin: 0; font-size: .95rem; }
+    .mission-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 22px; }
+    .mission-card { border-radius: 12px; padding: 32px; background: var(--navy); color: white; }
+    .mission-card:nth-child(2) { background: #eaf8fa; color: var(--navy); }
+    .mission-card h3 { font-size: 1.5rem; margin: 0 0 10px; }
+    .mission-card p { margin: 0; opacity: .83; }
+    .contact { background: linear-gradient(120deg,#10253f,#164f77); color: white; }
+    .contact-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 55px; align-items: start; }
+    .contact h2 { font-size: clamp(2rem,3.4vw,3rem); line-height: 1.15; margin: 10px 0 18px; }
+    .contact p { color: #d4e2ee; }
+    .contact-details { margin-top: 28px; }
+    .contact-details div { margin: 16px 0; }
+    .contact-details strong { display: block; color: var(--cyan); font-size: .82rem; text-transform: uppercase; letter-spacing: 1px; }
+    form { background: white; color: var(--ink); border-radius: 12px; padding: 28px; }
+    label { display: block; font-weight: 700; font-size: .9rem; margin: 13px 0 6px; }
+    input, textarea, select { width: 100%; padding: 12px 13px; border: 1px solid #cbd7e2; border-radius: 6px; font: inherit; background: #fbfdff; }
+    textarea { min-height: 115px; resize: vertical; }
+    form .btn { width: 100%; margin-top: 18px; }
+    .form-note { color: var(--muted); font-size: .8rem; margin: 12px 0 0; }
+    footer { background: #081625; color: #c4d1dd; padding: 28px 24px; }
+    .footer-inner { max-width: 1180px; margin: auto; display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; font-size: .88rem; }
+    .footer-inner strong { color: white; }
+    @media (max-width: 800px) {
+      .links { display: none; position: absolute; top: 73px; left: 0; right: 0; padding: 20px 24px; background: white; border-bottom: 1px solid var(--line); flex-direction: column; align-items: stretch; gap: 18px; }
+      .links.open { display: flex; }
+      .menu-btn { display: block; }
+      .nav > .btn { display: none; }
+      .trust-inner { grid-template-columns: 1fr; }
+      .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 35px; }
+      .about-image { min-height: 280px; }
+      .service-grid { grid-template-columns: 1fr; }
+      .mission-grid { grid-template-columns: 1fr; }
+      section { padding: 62px 20px; }
+      .hero { min-height: 540px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <span>Quality • Reliability • Progress</span>
+    <span>Building stronger industrial partnerships</span>
+  </div>
+  <header>
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="#home" aria-label="Pujan Acharjee Industries home">
+        <span class="brand-mark">PAI</span>
+        <span>PUJAN ACHARJEE<small>INDUSTRIES LTD</small></span>
+      </a>
+      <div class="links" id="navLinks">
+        <a href="#home">Home</a><a href="#about">About</a><a href="#services">Services</a><a href="#values">Our Values</a><a href="#contact">Contact</a>
+      </div>
+      <a class="btn btn-primary" href="#contact">Get in Touch</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open navigation menu" aria-expanded="false">☰</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-inner">
+        <div class="eyebrow">Pujan Acharjee Industries Ltd</div>
+        <h1>Industrial solutions.<br>Built on trust.</h1>
+        <p>We aim to bring quality, dependable service, and forward-thinking solutions to every project—helping businesses build a stronger tomorrow.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#services">Explore Our Services</a>
+          <a class="btn btn-outline" href="#about">Discover Our Company</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="trust-strip">
+      <div class="trust-inner">
+        <div class="trust-item"><span class="trust-icon">◆</span><div><strong>Quality First</strong><span>Attention to every detail</span></div></div>
+        <div class="trust-item"><span class="trust-icon">◈</span><div><strong>Reliable Service</strong><span>Partnerships built to last</span></div></div>
+        <div class="trust-item"><span class="trust-icon">↗</span><div><strong>Future Focused</strong><span>Progress through innovation</span></div></div>
+      </div>
+    </div>
+
+    <section id="about">
+      <div class="container about-grid">
+        <div class="about-image" role="img" aria-label="Industrial manufacturing facility"></div>
+        <div class="about-copy">
+          <div class="eyebrow">Who We Are</div>
+          <h2>A dependable partner for industrial progress.</h2>
+          <p>Pujan Acharjee Industries Ltd is presented here as a modern, professional industrial company focused on quality, customer relationships, and responsible growth.</p>
+          <p>Our goal is to understand each client's needs, communicate clearly, and work toward practical solutions that create lasting value.</p>
+          <ul class="check-list">
+            <li>Customer-focused approach</li>
+            <li>Commitment to quality and safety</li>
+            <li>Long-term business relationships</li>
+          </ul>
+          <a class="btn btn-primary" href="#contact">Talk to Our Team</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="services">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">What We Do</div>
+          <h2>Solutions designed around your needs.</h2>
+          <p>These are starter service categories for the website. Update them to reflect your company's actual products and capabilities.</p>
+        </div>
+        <div class="service-grid">
+          <article class="service-card"><div class="service-icon">⚙</div><h3>Industrial Solutions</h3><p>Practical support and solutions designed to help industrial operations work more efficiently.</p></article>
+          <article class="service-card"><div class="service-icon">▦</div><h3>Supply & Procurement</h3><p>A focus on dependable sourcing, clear communication, and meeting project requirements.</p></article>
+          <article class="service-card"><div class="service-icon">⌁</div><h3>Project Support</h3><p>Coordinated service and project assistance with an emphasis on quality and timely delivery.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="values">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">What Guides Us</div>
+          <h2>Our values shape every partnership.</h2>
+        </div>
+        <div class="mission-grid">
+          <article class="mission-card"><h3>Our Mission</h3><p>To provide dependable, quality-focused solutions, build trusted relationships, and contribute to sustainable business growth.</p></article>
+          <article class="mission-card"><h3>Our Vision</h3><p>To grow into a respected industrial partner known for integrity, service, continuous improvement, and customer confidence.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container contact-grid">
+        <div>
+          <div class="eyebrow">Contact Us</div>
+          <h2>Let's discuss your next project.</h2>
+          <p>Have a question or want to explore a business opportunity? Send a message using the form.</p>
+          <div class="contact-details">
+            <div><strong>Company</strong>Pujan Acharjee Industries Ltd</div>
+            <div><strong>Email</strong><span>Replace with your official email address</span></div>
+            <div><strong>Address</strong><span>Add your registered office address</span></div>
+            <div><strong>Phone</strong><span>Add your business contact number</span></div>
+          </div>
+        </div>
+        <form id="contactForm">
+          <h3>Send an enquiry</h3>
+          <label for="name">Your name</label><input id="name" name="name" autocomplete="name" required placeholder="Enter your full name">
+          <label for="email">Email address</label><input id="email" name="email" type="email" autocomplete="email" required placeholder="you@example.com">
+          <label for="subject">Subject</label><select id="subject" name="subject"><option>General enquiry</option><option>Products and services</option><option>Business partnership</option><option>Other</option></select>
+          <label for="message">Message</label><textarea id="message" name="message" required placeholder="How can we help?"></textarea>
+          <button class="btn btn-primary" type="submit">Prepare Email</button>
+          <p class="form-note">This demo opens your email app. Add your official email address in the code before publishing.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div><strong>PUJAN ACHARJEE INDUSTRIES LTD</strong><br>Quality. Reliability. Progress.</div>
+      <div>© <span id="year"></span> Pujan Acharjee Industries Ltd. All rights reserved.</div>
+    </div>
+  </footer>
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+    menuBtn.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', String(isOpen));
+    });
+    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded', 'false');
+    }));
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('contactForm').addEventListener('submit', event => {
+      event.preventDefault();
+      const companyEmail = 'YOUR-EMAIL@example.com'; // Replace with your official email.
+      if (companyEmail === 'YOUR-EMAIL@example.com') {
+        alert('Please update YOUR-EMAIL@example.com in index.html with your official company email before using this form.');
+        return;
+      }
+      const data = new FormData(event.target);
+      const body = `Name: ${data.get('name')}%0D%0AEmail: ${data.get('email')}%0D%0ASubject: ${data.get('subject')}%0D%0A%0D%0A${encodeURIComponent(data.get('message'))}`;
+      window.location.href = `mailto:${companyEmail}?subject=${encodeURIComponent(data.get('subject'))}&body=${body}`;
+    });
+  </script>
+</body>
+</html>
